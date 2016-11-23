@@ -1,0 +1,13 @@
+{
+    "env": {
+        "mocha": true
+    },
+    "globals": {
+        "APP_ROOT": false,
+        "expect": false,
+        "request": false,
+        "response": false,
+        "sinon": false,
+        "proxyquire": false
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "passports-payment-stub",
+  "version": "0.0.0",
+  "description": "Simple payment form for stubbed payment service",
+  "main": "app.js",
+  "scripts": {
+    "clean": "rm -rf public && mkdir public && mkdir public/stylesheets",
+    "build:css": "npm-sass ./assets/stylesheets/app.scss > ./public/stylesheets/app.css",
+    "build": "npm run clean && npm run build:css",
+    "lint": "eslint .",
+    "unit": "mocha ./test/unit/ --recursive --require ./test/unit/helper",
+    "test": "npm run lint && npm run unit",
+    "watch": "watch 'npm run build:css' ./assets/stylesheets",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "4.5.0",
+    "npm": "3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UKHomeOffice/passports-payment-stub.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UKHomeOffice/passports-payment-stub/issues"
+  },
+  "homepage": "https://github.com/UKHomeOffice/passports-payment-stub#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "hmpo-form-wizard": "^5.2.0",
+    "hmpo-frontend-toolkit": "^7.0.1",
+    "hmpo-template-mixins": "^4.4.2",
+    "hogan-express-strict": "^0.5.4",
+    "i18n-future": "^1.0.0",
+    "lodash": "^4.17.2",
+    "npm-sass": "^1.3.0",
+    "xml2json": "^0.10.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.10.2",
+    "mocha": "^3.1.2",
+    "proxyquire": "^1.7.10",
+    "reqres": "^1.2.2",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
+    "watch": "^1.0.1"
+  }
+}
