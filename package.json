@@ -8,7 +8,7 @@
     "build:css": "npm-sass ./assets/stylesheets/app.scss > ./public/stylesheets/app.css",
     "build": "npm run clean && npm run build:css",
     "lint": "eslint .",
-    "unit": "mocha ./test/unit/ --recursive --require ./test/unit/helper",
+    "unit": "NODE_ENV=TEST mocha ./test/unit/ --recursive --require ./test/unit/helper",
     "test": "npm run lint && npm run unit",
     "watch": "watch 'npm run build:css' ./assets/stylesheets",
     "start": "node app.js"
