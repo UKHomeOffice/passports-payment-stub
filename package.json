@@ -11,7 +11,9 @@
     "unit": "NODE_ENV=TEST mocha ./test/unit/ --recursive --require ./test/unit/helper",
     "test": "npm run lint && npm run unit",
     "watch": "watch 'npm run build:css' ./assets/stylesheets",
-    "start": "node app.js"
+    "start": "node app.js",
+    "start:test": "nodemon test/app/app.js || node test/app/app.js",
+    "start:test-remote": "STUB_URL=https://passports-payment-stub.cloudapps.digital/ nodemon test/app/app.js || node test/app/app.js"
   },
   "engines": {
     "node": "4.5.0",
