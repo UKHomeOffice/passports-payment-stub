@@ -8,6 +8,7 @@
         "request": false,
         "response": false,
         "sinon": false,
-        "proxyquire": false
+        "proxyquire": false,
+        "supertest": false
     }
 }
