@@ -27,6 +27,7 @@ app.use(require('./middleware/error-handler'));
 
 const PORT = process.env.PORT || 3021;
 app.listen(PORT);
+/* istanbul ignore if */
 if (process.env.NODE_ENV !== 'TEST') {
     // eslint-disable-next-line no-console
     console.log(`App listening on port ${PORT}`);

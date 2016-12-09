@@ -7,7 +7,7 @@ const supertest = require('supertest');
 chai.should();
 chai.use(require('sinon-chai'));
 
-global.APP_ROOT = require('path').resolve(__dirname, '../../');
+global.APP_ROOT = require('path').resolve(__dirname, '../');
 global.expect = chai.expect;
 global.request = reqres.req;
 global.response = reqres.res;
