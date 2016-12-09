@@ -1,0 +1,24 @@
+{
+    "fields": {
+        "cardnumberfield": {
+            "label": "Card number"
+        },
+        "expirydatefield-month": {
+            "label": "Month"
+        },
+        "expirydatefield-year": {
+            "label": "Year"
+        },
+        "cvvfield": {
+            "label": "Security code"
+        }
+    },
+    "buttons": {
+        "confirm": "Confirm"
+    },
+    "validation": {
+        "redirectionData": {
+            "required": "`redirectionData` field is required"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test service</title>
+</head>
+<body>
+    <header>
+        <h1>Test service</h1>
+    </header>
+    <form action="{{action}}" method="POST">
+        <input type="hidden" name="redirectionData" value="{{redirection-data}}">
+        {{#input-submit}}Go{{/input-submit}}
+        <input type="submit" value="Go" class="button">
+    </form>
+</body>
+</html>

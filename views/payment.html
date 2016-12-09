@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment for UK adult passport renewal</title>
+    <link rel="stylesheet" href="/public/stylesheets/app.css">
+</head>
+<body>
+<main id="content">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <header>
+                <h1>Payment for UK adult passport renewal</h1>
+            </header>
+            <form action="{{action}}" method="POST">
+                <dl>
+                    <dt>Total</dt>
+                    <dd>{{#currency}}{{cost}}{{/currency}}</dd>
+                </dl>
+
+                <h2>Accepted cards</h2>
+
+                <ul class="list cards">
+                    <li><img alt="Logo for card type VISA" name="VISA" src="/public/images/logo_VISA.png"></li>
+                    <li><img alt="Logo for card type MASTERCARD" name="MASTERCARD" src="/public/images/logo_MASTERCARD.png"></li>
+                    <li><img alt="Logo for card type VISA_ELECTRON" name="VISA_ELECTRON" src="/public/images/logo_VISA_ELECTRON.png"></li>
+                    <li><img alt="Logo for card type DELTA" name="DELTA" src="/public/images/logo_DELTA.png"></li>
+                    <li><img alt="Logo for card type MAESTRO" name="MAESTRO" src="/public/images/logo_MAESTRO.png"></li>
+                </ul>
+
+                {{#input-text}}cardnumberfield{{/input-text}}
+                <fieldset id="expirydatefield-group" class="form-group{{#errors.expirydatefield}} error{{/errors.expirydatefield}}">
+                    <legend>
+                        <span class="form-label-bold">Expiry date</span>
+                        <span id="expirydatefield-hint" class="visually-hidden">08 2017</span>
+                        {{#errors.expirydatefield}}<span id="expirydatefield-error" class="error-message">{{errors.expirydatefield.message}}</span>{{/errors.expirydatefield}}
+                    </legend>
+                    <div class="form-date">
+                        {{#input-date}}expirydatefield{{/input-date}}
+                    </div>
+                </fieldset>
+                {{#input-text}}cvvfield{{/input-text}}
+
+                {{#input-submit}}confirm{{/input-submit}}
+
+                <input type="hidden" name="base64Response" value="{{values.fake-response}}">
+
+                {{#csrf-token}}
+                    <input type="hidden" name="x-csrf-token" value="{{csrf-token}}">
+                {{/csrf-token}}
+            </form>
+
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

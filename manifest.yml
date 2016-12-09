@@ -1,0 +1,6 @@
+---
+applications:
+- name: passports-payment-stub
+  command: npm start
+  memory: 256M
+  buildpack: nodejs_buildpack
