@@ -23,10 +23,7 @@ app.use(require('body-parser').urlencoded({ extended: true }));
 
 app.use('/', require('./routes/payment'));
 
-// eslint-disable-next-line no-unused-vars
-app.use(function (err, req, res, next) {
-    res.status(404).json(err);
-});
+app.use(require('./middleware/error-handler'));
 
 const PORT = process.env.PORT || 3021;
 app.listen(PORT);

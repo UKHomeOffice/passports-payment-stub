@@ -26,7 +26,8 @@ describe('app.js', function () {
             bodyParser: {
                 urlencoded: sinon.stub().returns(function () {})
             },
-            payment: sinon.stub()
+            payment: sinon.stub(),
+            errorHandler: sinon.stub().returns(function () {})
         };
 
         imageMiddleware = sinon.stub();
@@ -43,7 +44,8 @@ describe('app.js', function () {
             'i18n-future': mocks.translation,
             'cookie-parser': mocks.cookies,
             'body-parser': mocks.bodyParser,
-            './routes/payment': mocks.payment
+            './routes/payment': mocks.payment,
+            './middleware/error-handler': mocks.errorHandler
         });
     });
 
@@ -96,11 +98,7 @@ describe('app.js', function () {
     });
 
     it('adds error handling function', function () {
-        // Express error handler uses a function with four arguments: err, req, res, next
-        let errorHandler = sinon.match(function errorHandler(value) {
-            return value.length === 4;
-        }, 'errorHandler')
-        app.use.should.have.been.calledWithExactly(sinon.match(errorHandler));
+        app.use.should.have.been.calledWithExactly(mocks.errorHandler);
     });
 
     it('listens on a default port', function () {
