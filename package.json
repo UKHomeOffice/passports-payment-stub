@@ -28,6 +28,9 @@
   },
   "author": "HMPO",
   "license": "MIT",
+  "engines": {
+    "node": ">=4"
+  },
   "bugs": {
     "url": "https://github.com/UKHomeOffice/passports-payment-stub/issues"
   },
