@@ -12,7 +12,7 @@ describe('Receiver Controller', function () {
         cb;
 
     beforeEach(function () {
-        controller = new Controller({ template: 'index' });
+        controller = new Controller({ route: '/index' });
         req = request();
         res = response();
         cb = sinon.stub();

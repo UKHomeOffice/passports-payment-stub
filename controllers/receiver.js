@@ -4,10 +4,6 @@ const Controller = require('hmpo-form-wizard').Controller;
 
 class Receiver extends Controller {
 
-    constructor(options) {
-        super(options);
-    }
-
     process(req, res, callback) {
         var data = req.form.values.redirectionData;
         if (data) {
