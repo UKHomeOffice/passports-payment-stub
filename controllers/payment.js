@@ -8,10 +8,6 @@ const Controller = require('hmpo-form-wizard').Controller;
 
 class Payment extends Controller {
 
-    constructor(options) {
-        super(options);
-    }
-
     getValues(req, res, callback) {
         super.getValues(req, res, function (err, values) {
             if (err) { return callback(err); }
