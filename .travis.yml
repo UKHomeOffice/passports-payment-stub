@@ -3,6 +3,9 @@ node_js:
   - "4"
   - "6"
   - "node"
+after_success:
+  - snyk auth $SNYK_TOKEN
+  - snyk test
 notifications:
   email: false
 env:
