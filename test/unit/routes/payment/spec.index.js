@@ -67,7 +67,7 @@ describe('Payment', function () {
                 .post('/')
                 .send('redirectionData={ "price": 1234 }')
                 .redirects(1)
-                .expect(302, done)
+                .expect(302, done);
         });
 
     });
